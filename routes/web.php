@@ -1,9 +1,9 @@
 <?php 
 
-use App\Controllers\ProfileController;
+use App\Controllers\BookController;
 
 return [
-    "/users/profile" => [ProfileController::class, "index"],
+    "/users/profile" => [BookController::class, "index"],
 
-    "users/profile/edit" => [ProfileController::class, "edit"]
+    "users/profile/edit" => [BookController::class, "edit"]
 ];

@@ -17,11 +17,15 @@ $request = $_SERVER['REQUEST_URI'];
 $request = explode("?", $request)[0];
 
 
-[$controller, $action] = $routes[$request] ?? [null, null];
+if (isset($routes[$request])) {
 
-if ($controller && $action) {
-    $controllerInstance = new $controller();
-    $controllerInstance->$action();
+    $controller = $routes[$request][0] ?? null;
+    $action = $routes[$request][1] ?? null;
+
+    if ($controller && $action) {
+        $newController = new $controller();
+        $newController->$action();
+    }
 }
 else {
     throw new Exception("404 NOT FOUND");

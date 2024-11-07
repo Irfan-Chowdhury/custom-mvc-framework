@@ -7,3 +7,9 @@ function view(string $view, array $data = [])
 
     require __DIR__ . "/views/{$view}.php";
 }
+
+
+function redirect($location)
+{
+    header("Location:$location");
+}

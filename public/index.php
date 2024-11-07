@@ -2,8 +2,6 @@
 
 //Autoload Classes
 
-use App\Controllers\ProfileController;
-
 require_once __DIR__ . "/../vendor/autoload.php";
 
 
@@ -11,8 +9,11 @@ require_once __DIR__ . "/../vendor/autoload.php";
 
 $routes = require_once __DIR__ . "/../routes/web.php";
 
-$request = $_SERVER['REQUEST_URI'];
 
+
+// Request URL
+
+$request = $_SERVER['REQUEST_URI'];
 $request = explode("?", $request)[0];
 
 
